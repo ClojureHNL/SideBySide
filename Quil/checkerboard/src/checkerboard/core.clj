@@ -2,33 +2,37 @@
   (:require [quil.core :as q]
             [quil.middleware :as m]))
 
+(def WIDTH 500)
+(def HEIGHT 500)
+
+(def ROWS 10)
+(def COLS 10)
+
 (defn setup []
-  {:color 0
-   :angle 0})
+  {})
 
 (defn update [state]
-  ; Update sketch state by changing circle color and position.
-  {:color (mod (+ (:color state) 0.7) 255)
-   :angle (+ (:angle state) 0.1)})
+  state)
 
 (defn draw [state]
-  ; Clear the sketch by filling it with light-grey color.
-  (q/background 240)
-  ; Set circle color.
-  (q/fill (:color state) 255 255)
-  ; Calculate x and y coordinates of the circle.
-  (let [angle (:angle state)
-        x (* 150 (q/cos angle))
-        y (* 150 (q/sin angle))]
-    ; Move origin point to the center of the sketch.
-    (q/with-translation [(/ (q/width) 2)
-                         (/ (q/height) 2)]
-      ; Draw the circle.
-      (q/ellipse x y 100 100))))
+  ; Clear the sketch by filling it with black color.
+  (q/background 0)
+  ; Set color.
+  (q/fill 255)
+  (let [col-width (/ WIDTH (float COLS))
+        row-height (/ HEIGHT (float ROWS))]
+    (doseq [row (range 0 ROWS)
+            col (range 0 COLS)
+            :when (or (and (even? row) (even? col))
+                      (and (odd? row) (odd? col)))
+            :let [x (* col-width col)
+                  y (* row-height row)]]
+      (q/rect x y col-width row-height)))
+  )
 
 (q/defsketch checkerboard
-  :title "You spin my circle right round"
-  :size [500 500]
+  :title "Checkerboard"
+  :size [WIDTH HEIGHT]
   ; setup function called only once, during sketch initialization.
   :setup setup
   ; update is called on each iteration before draw is called.
