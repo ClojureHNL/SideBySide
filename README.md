@@ -38,7 +38,7 @@ For the confident, check out the official install directions: https://github.com
 You can try to install it with these instructions (or, see below):
 https://github.com/jashkenas/ruby-processing/wiki/Installing-ruby-processing-on-the-mac
 
-##### For Mac: Alternatively, here’s what I did on my Mac:
+#### For Mac: Alternatively, here’s what I did on my Mac:
 
 - I had already installed Processing 2.2 from Processing.org: https://processing.org/download/?processing
 - (You need to do this if you don't have that already.)
