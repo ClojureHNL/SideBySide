@@ -34,7 +34,8 @@ For the confident, check out the official install directions: https://github.com
 - Untar it and note the location of the processing-<version> directory.
 - Add `PROCESSING_ROOT: "/home/<your user>/path/to/processing-<version>"` to a ~/.rp5rc file. This tells Ruby-Processing's rp5 command where to find your Processing install.
 
-#### For Mac, you can try to install it with these instructions (or, see below):
+#### For Mac
+You can try to install it with these instructions (or, see below):
 https://github.com/jashkenas/ruby-processing/wiki/Installing-ruby-processing-on-the-mac
 
 ##### For Mac: Alternatively, here’s what I did on my Mac:
