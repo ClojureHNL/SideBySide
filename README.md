@@ -11,11 +11,11 @@ Here's how to get yourself setup to draw. Get Quil working for the Clojure side,
 Be sure to install the latest Oracle JVM (1.8 at the time of this writing).
 
 For Clojure / Quil, I follow the following (if possible), before showing up:
-https://github.com/quil/quil/wiki/Installing
-https://github.com/quil/quil/wiki/Dynamic-Workflow-(for-REPL)
+- https://github.com/quil/quil/wiki/Installing
+- https://github.com/quil/quil/wiki/Dynamic-Workflow-(for-REPL)
 
 For Clojure / Quil, I recommend attempting to understand this approach if you're interested in Functional Programming:
-https://github.com/quil/quil/wiki/Functional-mode-(fun-mode)
+- https://github.com/quil/quil/wiki/Functional-mode-(fun-mode)
 
 
 ### RUBY-PROCESSING
