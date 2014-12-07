@@ -67,3 +67,15 @@ Also, here's Processing in other languages:
 - [P5.js: A Newer Processing in JavaScript](http://p5js.org)
 - [Quil-CLJS: Processing in ClojureScript (also Quil)](https://github.com/quil/quil/wiki/ClojureScript)
 - [Gloss: Approaches P5 in Haskell](http://gloss.ouroborus.net)
+
+## Processing's Drawing API
+
+Each install section has some sample demos you can try out. Feel free to explore on your own.
+
+The [Processing API](https://processing.org/reference/) is wrapped by both Clojure (in Quil) and Ruby (in Ruby-Processing). This is where you'll find the functions you'll use to complete your drawings.
+
+Quil's API is here: http://quil.info/api
+
+For Ruby-Processing the Processing API is available, but with Ruby syntax (which is a good thing): https://processing.org/reference/
+
+For more on using the API from Ruby, read this: https://github.com/jashkenas/ruby-processing/wiki/Using-the-Processing-API
