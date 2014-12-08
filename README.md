@@ -6,6 +6,8 @@ This is repo contains demo sketches for Processing, implemented in different lan
 
 Here's how to get yourself setup to draw. Get Quil working for the Clojure side, and Ruby-Processing for the Ruby side. The instructions below are "editor agnostic." I use Sublime and Emacs, but you can use whatever you like. These setup instructions leave you free to use the editor of your choice.
 
+If all else fails, just read the docs appropriate for your installation. I'm just summarizing the official materials.
+
 ### CLOJURE/QUIL
 
 Be sure to install the latest Oracle JVM (1.8 at the time of this writing).
