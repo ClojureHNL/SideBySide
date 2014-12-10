@@ -1,2 +1,6 @@
 # You should point this to wherever you unpacked the Processing lib.
+#
+# Example:
+# PROCESSING_ROOT: "/home/youruser/path/to/processing-2.2.1"
+#
 PROCESSING_ROOT: "/home/koba/work/Processing/processing-current"
