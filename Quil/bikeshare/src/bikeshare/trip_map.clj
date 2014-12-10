@@ -19,20 +19,35 @@
 
 (def DRAW-RATE 1) ;; frames per cycle
 (def BAR-W 1)
-(def MAX-TRIPS 100000)
+(def MAX-TRIPS 144015)
 
 (defn setup []
   (q/background 0)
+  (q/stroke-weight 0.5)
   (trip/load-trip-data trip-header trip-data)
   (station/load-station-data station-header station-data)
-  (let [trips (map (fn [trip]
+  
+  (let [sf-station-ids (station/sf-stations @station-data)
+        stations (station/station-lookup @station-data)
+        ;;; SF-STATIONS
+        stations (into {}
+                       (filter (fn [[station-id _]]
+                                 (sf-station-ids station-id))
+                               stations))
+        trips (map (fn [trip]
                      {:start-station-id (trip/start-station-id trip)
                       :end-station-id (trip/end-station-id trip)})
                    (take-last MAX-TRIPS @trip-data))
-        stations (station/station-lookup @station-data)
+        ;;; SF-TRIPS
+        trips (filter (fn [{:keys [start-station-id end-station-id]}]
+                        (and (sf-station-ids start-station-id)
+                             (sf-station-ids end-station-id)))
+                      trips)
         coords (vals stations)
         lats (map first coords)
         longs (map last coords)]
+    (println "lat: " [(apply min lats) (apply max lats)])
+    (println "long: " [(apply min longs) (apply max longs)])
     {:trips trips
      :stations stations
      :lat-bounds [(apply min lats) (apply max lats)]
@@ -44,9 +59,10 @@
                                 MAX-TRIPS)))
 
 (defn coord->xy
+  "Must invert y, due to difference between lat and P5 y axis."
   [[lat-min lat-max] [long-min long-max] [lat long]]
-  [(q/map-range long long-min long-max 0 MAP-W)
-   (q/map-range lat  lat-min  lat-max  0 MAP-H)])
+  [(q/map-range long long-min long-max 0     MAP-W)
+   (q/map-range lat  lat-min  lat-max  MAP-H 0)])
 
 (defn draw-trip
   [lat-bounds long-bounds stations {:keys [start-station-id end-station-id]}]

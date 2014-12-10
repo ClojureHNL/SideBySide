@@ -2,9 +2,11 @@
   (:require 
    [bikeshare.load :as load]))
 
-(def IDX-STATION-ID   0)
-(def IDX-STATION-LAT  2)
-(def IDX-STATION-LONG 3)
+(def IDX-STATION-ID       0)
+(def IDX-STATION-LAT      2)
+(def IDX-STATION-LONG     3)
+(def IDX-STATION-LANDMARK 5)
+(def LANDMARK-SF "San Francisco")
 
 ;;; There are 70 stations.
 ;;; The first row is the heading:
@@ -33,3 +35,10 @@
 
 (defn station-lookup [stations]
   (reduce insert-station {} stations))
+
+(defn sf-stations [stations]
+  (set
+   (map station-id
+        (filter (fn [station]
+                  (= LANDMARK-SF (nth station IDX-STATION-LANDMARK)))
+                stations))))
