@@ -52,6 +52,12 @@ https://github.com/jashkenas/ruby-processing/wiki/Installing-ruby-processing-on-
 - rbenv local jruby-1.7.16
 - jruby -S gem install ruby-processing
 
+### Testing Your ruby setup
+- cd SideBySide/Ruby/
+- rp5 run simple.rb
+
+You should see something like:
+![Screenshot](/Ruby/simple_rb.png?raw=true "Screenshot")
 
 ## DATA
 
