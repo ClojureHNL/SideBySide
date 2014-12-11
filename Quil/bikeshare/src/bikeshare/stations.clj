@@ -6,7 +6,9 @@
 (def IDX-STATION-LAT      2)
 (def IDX-STATION-LONG     3)
 (def IDX-STATION-LANDMARK 5)
+
 (def LANDMARK-SF "San Francisco")
+(def STATION-ID-CIVIC-CENTER 72)
 
 ;;; There are 70 stations.
 ;;; The first row is the heading:

@@ -46,8 +46,6 @@
         coords (vals stations)
         lats (map first coords)
         longs (map last coords)]
-    (println "lat: " [(apply min lats) (apply max lats)])
-    (println "long: " [(apply min longs) (apply max longs)])
     {:trips trips
      :stations stations
      :lat-bounds [(apply min lats) (apply max lats)]
